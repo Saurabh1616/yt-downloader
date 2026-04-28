@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamFetch | Simple YT Downloader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-xl w-full bg-gray-800 p-8 rounded-2xl shadow-2xl">
+        <h1 class="text-3xl font-bold text-center mb-8 text-red-500">StreamFetch</h1>
+        
+        <div class="flex flex-col gap-4">
+            <input id="urlInput" type="text" placeholder="Paste YouTube URL here..." 
+                class="w-full p-4 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-red-500 transition">
+            <button id="fetchBtn" class="bg-red-600 hover:bg-red-700 font-bold py-3 rounded-lg transition">Fetch Video</button>
+        </div>
+
+        <div id="loader" class="hidden flex justify-center my-8">
+            <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-red-500"></div>
+        </div>
+
+        <div id="preview" class="hidden mt-8 border-t border-gray-700 pt-6">
+            <img id="thumb" class="w-full rounded-lg mb-4" src="" alt="Thumbnail">
+            <h2 id="videoTitle" class="text-xl font-semibold mb-1"></h2>
+            <p id="channelName" class="text-gray-400 mb-6 text-sm"></p>
+            
+            <select id="formatSelect" class="w-full p-3 bg-gray-700 rounded-lg mb-4 outline-none">
+                <option value="best">MP4 Video (Highest Quality)</option>
+                <option value="720p">MP4 Video (720p)</option>
+                <option value="mp3">Audio Only (MP3)</option>
+            </select>
+            
+            <button id="downloadBtn" class="w-full bg-green-600 hover:bg-green-700 font-bold py-3 rounded-lg transition">Download Now</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
